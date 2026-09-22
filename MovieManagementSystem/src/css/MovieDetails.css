@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   MOVIE DETAILS PAGE
+========================================= */
+
+.movie-details-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 20px;
+
+    background: #f4f6fb;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-family: Arial, sans-serif;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================
+   DETAILS CARD
+========================================= */
+
+.movie-details-card {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 20px auto;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+
+    animation: detailsAppear 0.4s ease;
+}
+
+
+/* =========================================
+   POSTER
+========================================= */
+
+.details-poster-container {
+    width: 280px;
+    height: 400px;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+}
+
+
+.details-poster {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+
+.movie-details-card:hover .details-poster {
+    transform: scale(1.02);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.details-content {
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.details-label {
+    margin: 0 0 5px;
+
+    color: #e50914;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   MOVIE TITLE
+========================================= */
+
+.details-content h1 {
+    margin: 0 0 8px;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    color: #1f2937;
+}
+
+
+/* =========================================
+   RATING
+========================================= */
+
+.details-rating {
+    width: fit-content;
+
+    padding: 5px 10px;
+
+    margin: 0;
+
+    border-radius: 6px;
+
+    background: #fff4d6;
+
+    color: #b77900;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.details-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 10px 0;
+
+    background: #e5e7eb;
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.details-info {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+}
+
+
+.info-item {
+    padding: 7px 9px;
+
+    background: #f7f8fa;
+
+    border-radius: 6px;
+}
+
+
+.info-item span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.info-item strong {
+    color: #1f2937;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.details-back-btn {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 8px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #1f2937;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.details-back-btn:hover {
+    background: #111827;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes detailsAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .movie-details-page {
+        padding: 10px;
+
+        align-items: flex-start;
+    }
+
+
+    .movie-details-card {
+        width: 100%;
+
+        margin: 10px 0;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .details-poster-container {
+        width: 100%;
+
+        height: 320px;
+    }
+
+
+    .details-content {
+        padding: 20px;
+    }
+
+
+    .details-content h1 {
+        font-size: 28px;
+    }
+
+
+    .details-info {
+        grid-template-columns: 1fr;
+    }
+}

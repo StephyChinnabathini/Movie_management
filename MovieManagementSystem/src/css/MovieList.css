@@ -1,0 +1,391 @@
+
+/* ================================
+   MAIN PAGE
+================================ */
+.movie-container {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: #f4f6fb;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+/* ================================
+   HEADER
+================================ */
+.movie-header {
+    text-align: center;
+    margin-bottom: 35px;
+    animation: fadeDown 0.7s ease;
+}
+
+.movie-header h1 {
+    font-size: 44px;
+    margin: 0 0 10px;
+    color: #01040c;
+}
+
+.movie-header p {
+    font-size: 18px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ================================
+   NAVIGATION BUTTONS
+================================ */
+.movie-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.movie-navigation button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #090b12;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.movie-navigation button:hover {
+    background: #0f172a;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   SEARCH + FILTER AREA
+================================ */
+.movie-controls {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 22px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease;
+}
+
+.movie-controls input,
+.movie-controls select {
+    padding: 12px 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.movie-controls input:focus {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+}
+
+.movie-controls select:focus {
+    border-color: #0f172a;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.2);
+}
+
+/* ================================
+   MOVIE GRID
+================================ */
+.movie-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+/* ================================
+   MOVIE CARD
+================================ */
+.movie-card {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+    animation: cardAppear 0.6s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ================================
+   POSTER
+================================ */
+.movie-poster {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+/* ================================
+   INFO
+================================ */
+.movie-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.movie-info h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    color: #0f172a;
+}
+
+.movie-rating {
+    margin: 0 0 15px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #e09b00;
+}
+
+/* ================================
+   CARD BUTTONS
+================================ */
+.card-actions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+/* Common button style */
+.movie-card button {
+    border: none;
+    border-radius: 6px;
+    padding: 9px 14px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* ================================
+   DETAILS BUTTON
+================================ */
+.details-btn {
+    background: #1d2e8b;
+    color: #fff;
+}
+
+.details-btn:hover {
+    background: #3F51B5;
+}
+
+/* ================================
+   EDIT BUTTON
+================================ */
+.edit-btn {
+    background: #0f5157;
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background: #7B8B6F;
+}
+
+/* ================================
+   DELETE BUTTON
+================================ */
+.delete-btn {
+    background: #f43e47;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background: #B56A6E;
+}
+
+/* ================================
+   FAVOURITE HEART
+================================ */
+.movie-card .favourite-btn {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    /* Remove normal button appearance */
+    background: transparent !important;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+
+    /* LARGE HEART */
+    font-size: 52px;
+    line-height: 1;
+
+    /* Grey when not selected */
+    color: #9ca3af !important;
+
+    cursor: pointer;
+
+    /* Make sure it is visible above poster */
+    z-index: 10;
+
+    /* Smooth effect */
+    transition: color 0.25s ease, transform 0.2s ease;
+
+    /* Prevent other button styles */
+    width: auto;
+    height: auto;
+}
+
+/* ================================
+   HEART HOVER
+================================ */
+.movie-card .favourite-btn:hover {
+    background: transparent !important;
+    color: #1e3a8a !important;
+    transform: scale(1.15);
+}
+
+/* ================================
+   ACTIVE / SELECTED HEART
+================================ */
+.movie-card .favourite-btn.favourite-active {
+    background: transparent !important;
+
+    /* KEEP RED AFTER CLICK */
+    color: #dc2626 !important;
+
+    font-size: 52px;
+    padding: 0;
+
+    border: none;
+}
+
+/* ================================
+   ACTIVE HEART HOVER
+================================ */
+.movie-card .favourite-btn.favourite-active:hover {
+    background: transparent !important;
+
+    /* REMAIN RED */
+    color: #dc2626 !important;
+
+    transform: scale(1.15);
+}
+
+/* ================================
+   NO MOVIES
+================================ */
+.no-movies {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: #777;
+    margin-top: 50px;
+    animation: fadeUp 0.5s ease;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 700px) {
+
+    .movie-container {
+        padding: 25px 15px;
+    }
+
+    .movie-header h1 {
+        font-size: 32px;
+    }
+
+    .movie-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .movie-controls input,
+    .movie-controls select {
+        width: 100%;
+    }
+
+    .movie-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie-poster {
+        height: 320px;
+    }
+
+    /* Keep heart large on mobile too */
+    .movie-card .favourite-btn {
+        font-size: 48px;
+    }
+
+    .movie-card .favourite-btn.favourite-active {
+        font-size: 48px;
+    }
+}
+

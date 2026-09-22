@@ -1,0 +1,397 @@
+/* =========================================
+   ADD MOVIE PAGE
+========================================= */
+
+.add-movie-container {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 60px 30px;
+
+    background: linear-gradient(
+        135deg,
+        #f5f7fb,
+        #e7ecf5
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.add-movie-card {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 20px auto;
+
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15);
+
+    animation: formAppear 0.7s ease;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.add-movie-card h1 {
+    text-align: center;
+
+    font-size: 42px;
+
+    color: #1f2937;
+
+    margin: 0 0 10px;
+}
+
+.form-subtitle {
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #6b7280;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.add-movie-card form {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px 30px;
+}
+
+
+/* =========================================
+   FORM FIELD
+========================================= */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.add-movie-card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #374151;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.add-movie-card input[type="text"],
+.add-movie-card input[type="number"] {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #f9fafb;
+
+    color: #222;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.add-movie-card input::placeholder {
+    color: #9ca3af;
+
+    font-size: 14px;
+}
+
+.add-movie-card input[type="text"]:focus,
+.add-movie-card input[type="number"]:focus {
+    background: white;
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 0 4px rgba(229, 9, 20, 0.10);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   IMAGE UPLOAD
+========================================= */
+
+.image-field {
+    grid-column: 1 / -1;
+}
+
+.image-field input[type="file"] {
+    width: 100%;
+
+    height: auto;
+
+    padding: 12px;
+
+    border: 2px dashed #d1d5db;
+
+    border-radius: 10px;
+
+    background: #f9fafb;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.image-field input[type="file"]:hover {
+    border-color: #e50914;
+
+    background: #fffafa;
+}
+
+.image-help {
+    margin: 7px 0 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   IMAGE PREVIEW
+========================================= */
+
+.image-preview-section {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 15px;
+
+    background: #f9fafb;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+}
+
+.image-preview-section p {
+    margin: 0 0 10px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #374151;
+}
+
+.image-preview {
+    width: 170px;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+.save-movie-btn {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    height: 55px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.save-movie-btn:hover {
+    background: #c70812;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(229, 9, 20, 0.25);
+}
+
+.save-movie-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.add-movie-card > a {
+    text-decoration: none;
+}
+
+.back-btn {
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #eef0f4;
+
+    color: #374151;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.back-btn:hover {
+    background: #dfe3e9;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PAGE ANIMATION
+========================================= */
+
+@keyframes formAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .add-movie-container {
+        padding: 30px 15px;
+    }
+
+    .add-movie-card {
+        width: 100%;
+
+        padding: 30px 25px;
+    }
+
+    .add-movie-card h1 {
+        font-size: 32px;
+    }
+
+    .add-movie-card form {
+        grid-template-columns: 1fr;
+    }
+
+    .image-field {
+        grid-column: auto;
+    }
+
+    .image-preview-section {
+        grid-column: auto;
+    }
+
+    .save-movie-btn {
+        grid-column: auto;
+    }
+}
