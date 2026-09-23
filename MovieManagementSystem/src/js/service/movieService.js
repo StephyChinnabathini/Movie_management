@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/movies";
+const API_URL = "https://movie-management-api-k4lz.onrender.com/movies";
 
 // Get all movies
 export const getMovies = async () => {
@@ -43,4 +43,5 @@ export const deleteMovie = async (id) => {
     await fetch(`${API_URL}/${id}`, {
         method: "DELETE"
     });
+
 };
